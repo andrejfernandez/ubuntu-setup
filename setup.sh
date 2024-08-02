@@ -42,6 +42,6 @@ cp -r ./dotfiles ~/
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
 
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 cd ~
 zsh
