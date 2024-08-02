@@ -22,15 +22,6 @@ clear
 echo -e "Installing zoxide...\n"
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
-# Setup dotfiles
-clear
-echo -e "Setting up dotfiles...\n"
-mkdir ~/.config
-mkdir ~/.config/fastfetch
-cp -r ./dotfiles ~/
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
-
 # Install oh-my-zsh
 clear
 echo -e "Installing oh-my-zsh...\n"
@@ -41,6 +32,15 @@ clear
 echo -e "Installing oh-my-zsh plugins...\n"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# Setup dotfiles
+clear
+echo -e "Setting up dotfiles...\n"
+mkdir ~/.config
+mkdir ~/.config/fastfetch
+cp -r ./dotfiles ~/
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
 
 cd ~
 zsh
