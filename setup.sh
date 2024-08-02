@@ -1,26 +1,21 @@
+#!/bin/bash
 echo "Ubuntu Setup | github.com/andrejfernandez/ubuntu-setup\n"
-
-# Check if script is being run with admin privileges
-if [ "$(id -u)" -ne 0 ]; then
-    echo "This script must be run with administrative privileges!"
-    exit 1
-fi
 
 # Add repositores
 clear
 echo "Adding repositories...\n"
-add-apt-repository ppa:zhangsongcui3371/fastfetch
+sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
 
 # Updates
 clear
 echo "Updating and upgrading the system...\n"
-apt-get update
-apt-get upgrade -y
+sudo apt-get update
+sudo apt-get upgrade -y
 
 # Install base packages
 clear
 echo "Installing base packages...\n"
-apt install curl zsh fastfetch fzf
+sudo apt install curl zsh fastfetch fzf
 
 # Install zoxide
 clear
@@ -30,7 +25,7 @@ curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh 
 # Install oh-my-zsh
 clear
 echo "Installing oh-my-zsh...\n"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Install oh-my-zsh plugins
 clear
