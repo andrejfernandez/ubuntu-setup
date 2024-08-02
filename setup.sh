@@ -4,7 +4,7 @@ echo -e "Ubuntu Setup | github.com/andrejfernandez/ubuntu-setup\n"
 
 # Check if script is being run as admin
 if [ "$EUID" -ne 0 ]; then
-    echo "Please run this script as root or using sudo!\n"
+    echo -e "Please run this script as root or using sudo!\n"
     exit 1
 fi
 
