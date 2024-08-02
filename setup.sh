@@ -43,6 +43,9 @@ cp -r ./dotfiles ~/
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
 
+# Change default shell
+clear
+echo -e "Changing default shell to zsh...\n"
 chsh -s $(which zsh)
 cd ~
 zsh
