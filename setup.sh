@@ -2,26 +2,20 @@
 clear
 echo -e "Ubuntu Setup | github.com/andrejfernandez/ubuntu-setup\n"
 
-# Check if script is being run as admin
-if [ "$EUID" -ne 0 ]; then
-    echo -e "Please run this script as root or using sudo!\n"
-    exit 1
-fi
-
 # Add repositores
 echo -e "Adding repositories...\n"
-yes | add-apt-repository ppa:zhangsongcui3371/fastfetch
+yes | sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
 
 # Updates
 clear
 echo -e "Updating and upgrading the system...\n"
-apt-get update
-apt-get upgrade -y
+sudo apt-get update
+sudo apt-get upgrade -y
 
 # Install base packages
 clear
 echo -e "Installing base packages...\n"
-apt install curl zsh fastfetch fzf
+sudo apt install curl zsh fastfetch fzf
 
 # Install zoxide
 clear
@@ -49,6 +43,6 @@ cp -r ./dotfiles ~/
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
 
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 cd ~
 zsh
