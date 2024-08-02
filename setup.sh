@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 printf "Ubuntu Setup | github.com/andrejfernandez/ubuntu-setup\n"
 
 # Add repositores
